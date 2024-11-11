@@ -90,7 +90,13 @@ void shanchuhou(int n,shunxubiao*head){
 		swap(&(head->data[i]),&(head->data[i+1]));
 	}
 	head->size--;
-}                                                                                                                                                                                                                                                         
+} 
+void destroyed(shunxubiao*head){
+	assert(head);
+	free(head->data);
+	head->data=NULL;
+	head->neicun=head->size=0;
+}                                                                                                                                                                                                                                                        
 int main(){
 	shunxubiao a;
 	init(&a);
