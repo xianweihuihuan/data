@@ -35,9 +35,28 @@ int main(){
     cout<<j<<endl;
     st1.deletpos(j);
     st1.print();
-
     int k = st1.finddata(4);
     cout<<k<<endl;
-    st1.deletpos(k);
+    int h = st1.finddata(999);
+    cout<<h<<endl;
     st1.print();
+    int p = st1.finddata(99);
+    st1.deletpos(p);
+    st1.print();
+    st1.pushback(66);
+    st1.pushback(55);
+    st1.pushback(44);
+    st1.pushback(33);
+    st1.pushback(22);
+    st1.print();
+    int y =st1.finddata(66);
+    cout<<y<<endl;
+    st1.pushafterpos(y,999);
+    st1.pushbeforepos(y,888);
+    st1.print();
+    int ooo = st1.finddata(22);
+    st1.pushafterpos(ooo,11);
+    st1.print();
+    int yy = st1.checkdatapos(3);
+    cout<<yy<<endl;
 }
