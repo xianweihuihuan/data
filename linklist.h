@@ -26,5 +26,8 @@ public:
     void delethead();
     int finddata(int n );
     void print();
-
+    void deletpos(int pos);
+    void pushafterpos(int pos,int n);
+    void pushbeforepos(int pos,int n);
+    int checkdatapos(int pos);
 };
