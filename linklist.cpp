@@ -65,7 +65,7 @@ int linklist::finddata(int n)
     assert(head);
     int sz = 0;
     node *pcur = head;
-    while (pcur->val != n && pcur != nullptr)
+    while ( pcur != nullptr&&pcur->val != n)
     {
         sz++;
         pcur = pcur->next;
@@ -83,11 +83,10 @@ void linklist::print()
         return;
     }
     node*pcur = head;
-    while(pcur!=tail){
+    while(pcur!=nullptr){
         cout<<pcur->val<<"->";
         pcur=pcur->next;
     }
-    cout<<pcur->val<<"->";
     cout<<"nullptr"<<endl;
 }
 void linklist::deletpos(int pos){
@@ -104,4 +103,44 @@ void linklist::deletpos(int pos){
     prev->next = pcur->next;
     free(pcur);
     pcur = nullptr;
+}
+void linklist::pushafterpos(int pos,int n){
+    int i = pos;
+    node*pcur = head;
+    while(i--){
+        pcur = pcur->next;
+    }
+    node*tmp = buynode(n);
+    tmp->next = pcur->next;
+    pcur->next = tmp;
+    if(tail == pcur){
+        tail = tmp;
+    }
+}
+void linklist::pushbeforepos(int pos,int n ){
+    if(pos==0){
+        pushhead(n);
+        return;
+    }
+    int i  = pos;
+    node*pcur = head;
+    node*prev = nullptr;
+    while(i--){
+        prev= pcur;
+        pcur = pcur->next;
+    }
+    node*tmp = buynode(n);
+    prev->next = tmp;
+    tmp->next = pcur;
+}
+int linklist::checkdatapos(int pos){
+    int n = pos;
+    node*pcur = head;
+    while(n--){
+        if(pcur==nullptr){
+            return -999;
+        }
+        pcur = pcur->next;
+    }
+    return pcur->val;
 }
