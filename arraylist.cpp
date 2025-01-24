@@ -1,4 +1,5 @@
 #include "arraylist.h"
+
 using namespace std;
 void arraylist::buyalloc()
 {
@@ -123,6 +124,7 @@ void arraylist::insertbeforepos(int pos, int n)
     arr[pos] = n;
     size++;
 }
+
 void arraylist::deletpos(int pos)
 {
     for (int i = pos; i < size - 1; i++)
