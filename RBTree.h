@@ -59,7 +59,6 @@ protected:
             subL->_parent = ppnode;
         }
     }
-
     void RotateL(Node *parent)
     {
         Node *subR = parent->_right;
