@@ -36,6 +36,11 @@ void insertAtPosition(struct Node **head, int data, int position)
 {
     Node *prev = buy(data);
     Node *pcur = (*head);
+    Node *po = (*head);
+    int j =0;
+    while(po->next){
+
+    }
     if (position == 1)
     {
         insertAtBeginning(head, data);
